@@ -30,13 +30,6 @@
 	
 	<script src="../common/popper.min.js"></script>
 	<script src="../common/bootstrap-v.4.3.1.min.js"></script>
-	<script>
-	$(document).ready(function () {
-    	$(".grm_account_bank").html("농협");
-    	$(".brd_account_bank").html("농협");
-    	$(".grm_account_num").text("81311056008797");
-    	$(".brd_account_num").text("81302052019792");
-	</script>
 	
     <style>
 		html, body {
@@ -400,35 +393,19 @@
 		<div class="row">
 			<div class="col"></div>
 			<div class="col-10 font-ng font-3v">
-				<p class="bold text-right">신랑 & 신부에게 마음 전하기</p>
-				<p class="text-right">축복의 의미로 축의금을 전달해보세요.</p>
+				<p class="bold">신랑 & 신부에게 마음 전하기</p>
+				<p class="bold">축복의 의미로 축의금을 전달해보세요.</p>
 				
 				<p class="bold">신랑</p>
-				<p class="text-right td input_husband"></p>
-				<p class="text-right grm_account_num" id="h_num"></p>
-				<a class="copy_btn" onclick="copyToClipboard('h_num')">복사하기</a>
+				<p>서양수</p>
+				<p>농협 : 813110-56-008797</p>
 				<p class="margin-minus">&nbsp;</p>
 				<p class="bold">신부</p>
-				<p class="text-right brd_account_bank"></p>
-				<p class="text-right brd_account_num" id="w_num"></p>
-				<a class="copy_btn" onclick="copyToClipboard('w_num')">복사하기</a>
+				<p>이형대</p>
+				<p>농협 : 813020-52-019792</p>
 				<p class="margin-minus">&nbsp;</p>
 			</div>
 			<div class="col"></div>
-			<script>
-		
-
-			//복사
-			function copyToClipboard(elementId) {
-			  var aux = document.createElement("input");
-			  aux.setAttribute("value", document.getElementById(elementId).innerHTML);
-			  document.body.appendChild(aux);
-			  aux.select();
-			  document.execCommand("copy");
-              document.body.removeChild(aux);
-                alert("복사되었습니다.");
-			}
-		</script>
 		</div>
 		<!-- 계좌 -->
 		
