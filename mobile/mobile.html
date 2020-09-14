@@ -36,20 +36,6 @@
     	$(".brd_account_bank").html("농협");
     	$(".grm_account_num").text("81311056008797");
     	$(".brd_account_num").text("81302052019792");
-    	
-		// 팝업
-		$(function(){
-			$('.h_btn').click(function(){
-				$('.remittance_pop_h').show();
-			});
-			$('.w_btn').click(function(){
-				$('.remittance_pop_w').show();
-			});
-			$('.close_btn').click(function(){
-				$('.remittance_pop_h, .remittance_pop_w').hide();
-			});
-		});
-	});
 	</script>
 	
     <style>
@@ -410,43 +396,26 @@
 			.remittance_pop_inner .copy_btn{display: block; line-height: 26px; width: 30%; margin-left: 70%; margin-top: -20px; background-color: #dddddd; border-radius: 4px; font-size: 12px; font-family: 'Noto Sans KR', sans-serif; color: #232323;}
 			.remittance_pop_inner .close_btn{ width: 100%; line-height: 52px; line-height: 52px; color: white; background-color: #808080; display: block; border-radius: 5px; margin-top: 10%; font-family: 'Noto Sans KR', sans-serif; font-size: 18px;}
 		</style>
-		<div class="remittance">
-			<h4 class="remittance_title">신랑 & 신부에게 마음 전하기</h4>
-			<p class="remittance_sub_title">축복의 의미로 축의금을 전달해보세요</p>
-			<div class="remittance_btn_bx">
-				<p class="btn_bx_1">
-					<span class="th">신랑&nbsp;&nbsp;</span>
-					<span class="td input_husband"></span>
-					<a href="#" onclick="return false" class="h_btn">신랑 계좌번호 보기</a>
-				</p>
-				<p class="btn_bx_2">
-					<span class="th">신부&nbsp;&nbsp;</span>
-					<span class="td input_wife"></span>
-					<a href="#" onclick="return false" class="w_btn">신부 계좌번호 보기</a>
-				</p>
+		
+		<div class="row">
+			<div class="col"></div>
+			<div class="col-10 font-ng font-3v">
+				<p class="bold text-right">신랑 & 신부에게 마음 전하기</p>
+				<p class="text-right">축복의 의미로 축의금을 전달해보세요.</p>
+				
+				<p class="bold">신랑</p>
+				<p class="text-right td input_husband"></p>
+				<p class="text-right grm_account_num" id="h_num"></p>
+				<a class="copy_btn" onclick="copyToClipboard('h_num')">복사하기</a>
+				<p class="margin-minus">&nbsp;</p>
+				<p class="bold">신부</p>
+				<p class="text-right brd_account_bank"></p>
+				<p class="text-right brd_account_num" id="w_num"></p>
+				<a class="copy_btn" onclick="copyToClipboard('w_num')">복사하기</a>
+				<p class="margin-minus">&nbsp;</p>
 			</div>
-			<!-- 팝업 -->
-			<div class="remittance_pop_h" style="display: none;">
-				<div class="remittance_pop_inner">
-					<p class="account_info">신랑 <span class="account_name account_name_h input_husband"></span> 계좌번호</p>
-					<p class="account_h_c account_c grm_account_bank"></p>
-					<p class="account_num grm_account_num" id="h_num"></p>
-					<a class="copy_btn" onclick="copyToClipboard('h_num')">복사하기</a>
-					<a class="close_btn" href="#" onclick="return false">닫기</a>
-				</div>
-			</div>
-			<div class="remittance_pop_w" style="display: none;">
-				<div class="remittance_pop_inner">
-					<p class="account_info">신부 <span class="account_name account_name_w input_wife"></span> 계좌번호</p>
-					<p class="account_w_c account_c brd_account_bank"></p>
-					<p class="account_num brd_account_num" id="w_num"></p>
-					<a class="copy_btn" onclick="copyToClipboard('w_num')">복사하기</a>
-					<a class="close_btn" href="#" onclick="return false">닫기</a>
-				</div>
-			</div>
-			<!-- 팝업 -->
-		</div>
-		<script>
+			<div class="col"></div>
+			<script>
 		
 
 			//복사
@@ -460,7 +429,9 @@
                 alert("복사되었습니다.");
 			}
 		</script>
+		</div>
 		<!-- 계좌 -->
+		
 	<!-- Slider main container -->
 	<div class="swiper-container">
 		<!-- Additional required wrapper -->
