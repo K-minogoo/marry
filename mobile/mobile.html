@@ -476,8 +476,12 @@ a.btn-layerClose:hover {
             <div class="pop-conts">
                 <!--content //-->
                 <p class="ctxt mb20">농협<br><br>
-                    813020-52-019792
+                    <span>813020-52-019792</span>
                 </p>
+                
+                <div class="btn-r">
+                    <a href="#" onclick="copy('81302052019792')">복사하기</a>
+                </div>
 
                 <div class="btn-r">
                     <a href="#" class="btn-layerClose">Close</a>
@@ -523,7 +527,15 @@ function layer_popup(el){
         $('.dim-layer').fadeOut();
         return false;
     });
-
+}
+function copy(val) {
+	var dummy = document.createElement("textarea");
+	document.body.appendChild(dummy);
+	dummy.value = val;
+	dummy.select();
+	document.execCommand("copy");
+	document.body.removeChild(dummy);
+	alert("복사되었습니다.");
 }
 </script>
 		
