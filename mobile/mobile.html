@@ -30,6 +30,45 @@
 	
 	<script src="../common/popper.min.js"></script>
 	<script src="../common/bootstrap-v.4.3.1.min.js"></script>
+	<script>
+	$(document).ready(function () {
+    	$(".grm_account_bank").html("농협");
+    	$(".brd_account_bank").html("농협");
+    	$(".grm_account_num").text("81311056008797");
+    	$(".brd_account_num").text("81302052019792");
+
+    	if ("Y" == "Y" || "Y" == "Y") {
+        	$(".remittance").show();
+    	} else {
+        	$(".remittance").hide();
+    	}
+
+    	if ("Y" == "Y") {
+        	$(".btn_bx_1").show();
+    	} else {
+        	$(".btn_bx_1").hide();
+    	}
+
+    	if ("Y" == "Y") {
+        	$(".btn_bx_2").show();
+    	} else {
+        	$(".btn_bx_2").hide();
+    	}
+    	
+		// 팝업
+		$(function(){
+			$('.h_btn').click(function(){
+				$('.remittance_pop_h').show();
+			});
+			$('.w_btn').click(function(){
+				$('.remittance_pop_w').show();
+			});
+			$('.close_btn').click(function(){
+				$('.remittance_pop_h, .remittance_pop_w').hide();
+			});
+		});
+	});
+	</script>
 	
     <style>
 		html, body {
@@ -389,7 +428,7 @@
 			.remittance_pop_inner .copy_btn{display: block; line-height: 26px; width: 30%; margin-left: 70%; margin-top: -20px; background-color: #dddddd; border-radius: 4px; font-size: 12px; font-family: 'Noto Sans KR', sans-serif; color: #232323;}
 			.remittance_pop_inner .close_btn{ width: 100%; line-height: 52px; line-height: 52px; color: white; background-color: #808080; display: block; border-radius: 5px; margin-top: 10%; font-family: 'Noto Sans KR', sans-serif; font-size: 18px;}
 		</style>
-		<div class="remittance" style="display:none;">
+		<div class="remittance">
 			<h4 class="remittance_title">신랑 & 신부에게 마음 전하기</h4>
 			<p class="remittance_sub_title">축복의 의미로 축의금을 전달해보세요</p>
 			<div class="remittance_btn_bx">
@@ -426,43 +465,7 @@
 			<!-- 팝업 -->
 		</div>
 		<script>
-		$(document).ready(function () {
-        	$(".grm_account_bank").html("농협");
-        	$(".brd_account_bank").html("농협");
-        	$(".grm_account_num").text("81311056008797");
-        	$(".brd_account_num").text("81302052019792");
-
-        	if ("Y" == "Y" || "Y" == "Y") {
-            	$(".remittance").show();
-        	} else {
-            	$(".remittance").hide();
-        	}
-
-        	if ("Y" == "Y") {
-            	$(".btn_bx_1").show();
-        	} else {
-            	$(".btn_bx_1").hide();
-        	}
-
-        	if ("Y" == "Y") {
-            	$(".btn_bx_2").show();
-        	} else {
-            	$(".btn_bx_2").hide();
-        	}
-        	
-			// 팝업
-			$(function(){
-				$('.h_btn').click(function(){
-					$('.remittance_pop_h').show();
-				});
-				$('.w_btn').click(function(){
-					$('.remittance_pop_w').show();
-				});
-				$('.close_btn').click(function(){
-					$('.remittance_pop_h, .remittance_pop_w').hide();
-				});
-			});
-		});
+		
 
 			//복사
 			function copyToClipboard(elementId) {
@@ -516,6 +519,7 @@
 	</div>
 	<script src="../common/swiper-v.4.5.0.min.js"></script>
 	<script>
+	
 		var mySwiper = new Swiper('.swiper-container', {
 			// Optional parameters
 			direction: 'horizontal',
