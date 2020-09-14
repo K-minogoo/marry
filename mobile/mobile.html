@@ -6,6 +6,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="shortcut icon" href="../common/favicon.ico">
 	<link rel="icon" href="../common/favicon.ico">
+	<meta property="og:title" content="정진♡아해 청첩장">
 	<meta property="og:description" content="2020년 10월 17일 토요일 오후3시30분">
 	<meta property="og:image" content="https://K-minogoo.github.io/marry/mobile/main.jpg">
 	<meta property="msapplication-TileColor" content="#663333">
@@ -30,7 +31,16 @@
 	<script src="../common/popper.min.js"></script>
 	<script src="../common/bootstrap-v.4.3.1.min.js"></script>
 	
+<style>
+
+</style>
+	
     <style>
+    
+    * {
+  margin: 0;
+  padding: 0;
+}
 		html, body {
             position: relative;
             height: 100%;
@@ -138,6 +148,80 @@
 		p {
 			margin: 0px;
 		}
+		
+				
+
+.pop-layer .pop-container {
+  padding: 20px 25px;
+}
+
+.pop-layer p.ctxt {
+  color: #666;
+  line-height: 25px;
+}
+
+.pop-layer .btn-r {
+  width: 100%;
+  margin: 10px 0 20px;
+  padding-top: 10px;
+  border-top: 1px solid #DDD;
+  text-align: right;
+}
+
+.pop-layer {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 410px;
+  height: auto;
+  background-color: #fff;
+  border: 5px solid #3571B5;
+  z-index: 10;
+}
+
+.dim-layer {
+  display: none;
+  position: fixed;
+  _position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.dim-layer .dimBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .5;
+  filter: alpha(opacity=50);
+}
+
+.dim-layer .pop-layer {
+  display: block;
+}
+
+a.btn-layerClose {
+  display: inline-block;
+  height: 25px;
+  padding: 0 14px 0;
+  border: 1px solid #304a8a;
+  background-color: #3f5a9d;
+  font-size: 13px;
+  color: #fff;
+  line-height: 25px;
+}
+
+a.btn-layerClose:hover {
+  border: 1px solid #091940;
+  background-color: #1f326a;
+  color: #fff;
+}
     </style>
 </head>
 <body>
@@ -368,88 +452,7 @@
 			<div class="col"></div>
 		</div>
 	</div>
-		<style>
-		* {
-  margin: 0;
-  padding: 0;
-}
 
-body {
-  margin: 100px;
-}
-
-.pop-layer .pop-container {
-  padding: 20px 25px;
-}
-
-.pop-layer p.ctxt {
-  color: #666;
-  line-height: 25px;
-}
-
-.pop-layer .btn-r {
-  width: 100%;
-  margin: 10px 0 20px;
-  padding-top: 10px;
-  border-top: 1px solid #DDD;
-  text-align: right;
-}
-
-.pop-layer {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 410px;
-  height: auto;
-  background-color: #fff;
-  border: 5px solid #3571B5;
-  z-index: 10;
-}
-
-.dim-layer {
-  display: none;
-  position: fixed;
-  _position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
-}
-
-.dim-layer .dimBg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  opacity: .5;
-  filter: alpha(opacity=50);
-}
-
-.dim-layer .pop-layer {
-  display: block;
-}
-
-a.btn-layerClose {
-  display: inline-block;
-  height: 25px;
-  padding: 0 14px 0;
-  border: 1px solid #304a8a;
-  background-color: #3f5a9d;
-  font-size: 13px;
-  color: #fff;
-  line-height: 25px;
-}
-
-a.btn-layerClose:hover {
-  border: 1px solid #091940;
-  background-color: #1f326a;
-  color: #fff;
-}
-		</style>
 		<div style="height: 300px;"></div>
 		<a href="#layer1" class="btn-example">신랑 계좌번호</a>
 <div id="layer1" class="pop-layer">
