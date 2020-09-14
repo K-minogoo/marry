@@ -511,7 +511,10 @@ function layer_popup(el){
             marginLeft: -$elWidth/2
         })
     } else {
-        $el.css({top: 0, left: 0});
+        $el.css({
+        	marginTop: -$elHeight /2,
+            marginLeft: -$elWidth/2
+       	});
     }
 
     $el.find('a.btn-layerClose').click(function(){
