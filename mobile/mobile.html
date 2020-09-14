@@ -369,6 +369,127 @@
 			<div class="col"></div>
 		</div>
 	</div>
+	<!-- 계좌 -->
+		<style>
+			.remittance{display: block; width: 100%; border-top: 1px solid #dddddd; box-sizing: border-box; padding: 18% 0 18% 0; position: relative;}
+			.remittance .remittance_title{font-weight: 600; font-size: 17px; color: #414141; padding-bottom: 2%;}
+			.remittance .remittance_sub_title{font-weight: normal; font-size: 15px; padding-bottom: 8%; color: #797979;}
+			/* 신랑, 신부 */
+			.remittance .remittance_btn_bx p > span{font-weight: 600; font-size: 17px; color: #3b3b3b; display: inline-block; line-height: 40px;}
+			/* 버튼 스킨 */
+			.remittance .remittance_btn_bx p > a{display: inline-block; line-height: 41px; color: white; font-size: 13px; background-color: #808080; border-radius: 22px; padding: 0 5.5%; margin-left: 12%; font-family: 'Noto Sans Kr', sans-serif;}
+			.remittance .remittance_btn_bx .btn_bx_1{padding-bottom: 8%;}
+			.remittance .remittance_btn_bx .btn_bx_2{padding-bottom: 0;}
+
+			.remittance_pop_h, .remittance_pop_w{position: absolute; top: -1px; left: 0; width: 100%; background-color: #fff;}
+			.remittance_pop_h .remittance_pop_inner, .remittance_pop_w .remittance_pop_inner{background-color: #fafafa; border: 1px solid #d0d0d0; width: 90%; margin-left: 5%; padding: 8% 7.5% 5% 7.5%; box-sizing: border-box; position: relative;}
+			.remittance_pop_inner .account_info{color: #232323; text-align: left; font-family: 'Noto Sans KR', sans-serif; font-weight: 600; line-height: 40px; border-bottom: 1px solid #aaa; font-size: 18px; margin-bottom: 8.5%;}
+			.remittance_pop_inner .account_c{color: #232323; text-align: left; font-family: 'Noto Sans KR', sans-serif;  font-size: 18px; padding-bottom: 2.5%;}
+			.remittance_pop_inner .account_num{color: #232323; text-align: left; font-family: 'Noto Sans KR', sans-serif;  font-size: 18px; line-height: 18px;}
+			.remittance_pop_inner .copy_btn{display: block; line-height: 26px; width: 30%; margin-left: 70%; margin-top: -20px; background-color: #dddddd; border-radius: 4px; font-size: 12px; font-family: 'Noto Sans KR', sans-serif; color: #232323;}
+			.remittance_pop_inner .close_btn{ width: 100%; line-height: 52px; line-height: 52px; color: white; background-color: #808080; display: block; border-radius: 5px; margin-top: 10%; font-family: 'Noto Sans KR', sans-serif; font-size: 18px;}
+		</style>
+		<div class="remittance" style="display:none;">
+			<h4 class="remittance_title">신랑 & 신부에게 마음 전하기</h4>
+			<p class="remittance_sub_title">축복의 의미로 축의금을 전달해보세요</p>
+			<div class="remittance_btn_bx">
+				<p class="btn_bx_1"  style="display:none;">
+					<span class="th">신랑&nbsp;&nbsp;</span>
+					<span class="td input_husband"></span>
+					<a href="#" onclick="return false" class="h_btn">신랑 계좌번호 보기</a>
+				</p>
+				<p class="btn_bx_2"  style="display:none;">
+					<span class="th">신부&nbsp;&nbsp;</span>
+					<span class="td input_wife"></span>
+					<a href="#" onclick="return false" class="w_btn">신부 계좌번호 보기</a>
+				</p>
+			</div>
+			<!-- 팝업 -->
+			<div class="remittance_pop_h" style="display: none;">
+				<div class="remittance_pop_inner">
+					<p class="account_info">신랑 <span class="account_name account_name_h input_husband"></span> 계좌번호</p>
+					<p class="account_h_c account_c grm_account_bank"></p>
+					<p class="account_num grm_account_num" id="h_num"></p>
+					<a class="copy_btn" onclick="copyToClipboard('h_num')">복사하기</a>
+					<a class="close_btn" href="#" onclick="return false">닫기</a>
+				</div>
+			</div>
+			<div class="remittance_pop_w" style="display: none;">
+				<div class="remittance_pop_inner">
+					<p class="account_info">신부 <span class="account_name account_name_w input_wife"></span> 계좌번호</p>
+					<p class="account_w_c account_c brd_account_bank"></p>
+					<p class="account_num brd_account_num" id="w_num"></p>
+					<a class="copy_btn" onclick="copyToClipboard('w_num')">복사하기</a>
+					<a class="close_btn" href="#" onclick="return false">닫기</a>
+				</div>
+			</div>
+			<!-- 팝업 -->
+		</div>
+		<script>
+		$(document).ready(function () {
+			if ("N" == "Y") {
+           		//송금주소를 제대로 받아왔을때만 보이도록 함
+            	if ("" != "" && "" != "") {
+                	$("#MoneyGift").show();
+            	} else {
+               		$("#MoneyGift").hide();
+            	}
+        	} else if ("N" == "R") {
+            	//$("#MoneyGift").show();
+            	$("#MoneyGift").hide();
+        	}else{
+            	$("#MoneyGift").hide();
+        	}
+
+        	$(".grm_account_bank").html("수협은행");
+        	$(".brd_account_bank").html("KB국민");
+        	$(".grm_account_num").text("101014913656");
+        	$(".brd_account_num").text("55750104200554");
+
+        	if ("Y" == "Y" || "Y" == "Y") {
+            	$(".remittance").show();
+        	} else {
+            	$(".remittance").hide();
+        	}
+
+        	if ("Y" == "Y") {
+            	$(".btn_bx_1").show();
+        	} else {
+            	$(".btn_bx_1").hide();
+        	}
+
+        	if ("Y" == "Y") {
+            	$(".btn_bx_2").show();
+        	} else {
+            	$(".btn_bx_2").hide();
+        	}
+        	
+			// 팝업
+			$(function(){
+				$('.h_btn').click(function(){
+					$('.remittance_pop_h').show();
+				});
+				$('.w_btn').click(function(){
+					$('.remittance_pop_w').show();
+				});
+				$('.close_btn').click(function(){
+					$('.remittance_pop_h, .remittance_pop_w').hide();
+				});
+			});
+		});
+
+			//복사
+			function copyToClipboard(elementId) {
+			  var aux = document.createElement("input");
+			  aux.setAttribute("value", document.getElementById(elementId).innerHTML);
+			  document.body.appendChild(aux);
+			  aux.select();
+			  document.execCommand("copy");
+              document.body.removeChild(aux);
+                alert("복사되었습니다.");
+			}
+		</script>
+		<!-- 계좌 -->
 	<!-- Slider main container -->
 	<div class="swiper-container">
 		<!-- Additional required wrapper -->
