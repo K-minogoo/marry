@@ -427,24 +427,10 @@
 		</div>
 		<script>
 		$(document).ready(function () {
-			if ("N" == "Y") {
-           		//송금주소를 제대로 받아왔을때만 보이도록 함
-            	if ("" != "" && "" != "") {
-                	$("#MoneyGift").show();
-            	} else {
-               		$("#MoneyGift").hide();
-            	}
-        	} else if ("N" == "R") {
-            	//$("#MoneyGift").show();
-            	$("#MoneyGift").hide();
-        	}else{
-            	$("#MoneyGift").hide();
-        	}
-
-        	$(".grm_account_bank").html("수협은행");
-        	$(".brd_account_bank").html("KB국민");
-        	$(".grm_account_num").text("101014913656");
-        	$(".brd_account_num").text("55750104200554");
+        	$(".grm_account_bank").html("농협");
+        	$(".brd_account_bank").html("농협");
+        	$(".grm_account_num").text("81302052019792");
+        	$(".brd_account_num").text("81311056008797");
 
         	if ("Y" == "Y" || "Y" == "Y") {
             	$(".remittance").show();
